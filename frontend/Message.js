@@ -11,11 +11,11 @@ function generateLightColorRgb(name) {
 
 export const Message = ({ author = "", message = "", millis }) => {
     for(const badWord of badWords) {
-        if(message.toLowerCase().includes(badWord.toLowerCase())) {
-            const start = message.indexOf(badWord);
-            const len = badWord.length;
+        if(message.toLowerCase().includes(badWord.toLowerCase())) {                                     //lowercase na porownywane teksty
+            const start = message.indexOf(badWord);                                                     //liczenie pozycji na której zaczyna się badword
+            const len = badWord.length;                                                                 //ustalenie długości badword
 
-            message = message.substring(0, start) + "*".repeat(len) + message.substring(start+len);
+            message = message.substring(0, start) + "*".repeat(len) + message.substring(start+len);     //zastąpienie badword odpowiednią ilością gwiazdek
         }
     }
 
